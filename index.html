@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-  <head>
-    <title>Routing App</title>
-    <link type="text/css" rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
+<head>
+  <title>Routing App</title>
+  <link type="text/css" rel="stylesheet" href="styles.css" />
+</head>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-  </body>
+<body>
+  <div class="menu">
+    <li>
+      <a ui-sref="home">home</a>
+    </li>
+    <li>
+      Products
+      <ul>
+        <li>
+          <a ui-sref="products({id: 'shoes'})">Shoes</a>
+        </li>
+        <li>
+          <a ui-sref="products({id: 'socks'})">Socks</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a ui-sref="settings">settings</a>
+    </li>
+  </div>
+  <div class="view-container">
+    <div ui-view>
+
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script src="./js/products/productsCtrl.js"></script>
+  <script src="js/products/productsSrvc.js"></script>
+</body>
+
 </html>
